@@ -41,6 +41,9 @@ header{
     align-items: center;
     gap: 2rem;
 }
+.mobile-brand{
+    display: none;
+}
 .nav-link{
     color: var(--Very-Dark-Blue);
     text-transform: uppercase;
@@ -74,12 +77,11 @@ header{
 .hero-section{
     display: flex;
     justify-content: space-between;
-    padding: 0rem 8rem;
     margin-top: 4rem;
-    height: 70vh;
 }
 .hero-details{
-    width: 40%;
+    padding: 0rem 10rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -95,6 +97,7 @@ header{
 }
 .hero-btn-group{
     display: flex;
+    align-items: center;
     gap: 1rem;
 }
 .hero-btn-group .btn{
@@ -124,26 +127,25 @@ header{
     transition: .3s;
 }
 .hero-img{
-    width: 40%;
+    position: relative;
 }
 .hero-shape{
-    height: 350px;
+    height: 300px;
     width: 500px;
     background: var(--Soft-Blue);
-    position: absolute;
-    right: 0;
-    bottom: 12rem;
     border-radius: 0px 0px 0px 40%;
-    z-index: -1;
+    margin-top: 80px;
 }
 .hero-img img{
-    width: 550px;
-    position: relative;
-    right: 10rem;
-    bottom: 2rem;
+    width: 600px;
+    position: absolute;
+    right: 35px;
+    bottom: 0px;
 }
 
-
+.feature-section{
+    margin-top: 80px;
+}
 .section-intro{
     text-align: center;
     width: 40%;
@@ -159,20 +161,19 @@ header{
     color: var(--Grayish-Blue);
 }
 .feature-tab{
-    padding: 0rem 8rem;
     margin-bottom: 8rem;
+}
+.tab-menu{
+    padding: 2rem;
+    border-bottom: 1px solid #e6e3e3;
+    width: 60%;
+    margin: auto;
 }
 .feature-nav-tab{
     display: flex;
     justify-content: space-evenly;
     margin-top: 1rem;
     position: relative;     
-}
-.tab-menu{
-    padding: 2rem;
-    border-bottom: 1px solid #e6e3e3;
-    width: 80%;
-
 }
 .tab-item{
     color: var(--Grayish-Blue);
@@ -184,7 +185,7 @@ header{
     background: var(--Soft-Red);
     position: absolute;
     top: 3.7rem;
-    left: 7.3rem;
+    left: 4.4rem;
     transition: all 0.3s ease-in-out;
     pointer-events: none;
 }
@@ -196,15 +197,15 @@ header{
     color: var(--Soft-Red);
 }
 .tab{
+    display: flex;
+    justify-content: space-between;
     margin-top: 6rem;
-    padding: 0rem 4rem;
     display: none;
-    gap: 5rem;
     animation: moving .5s ease;
 }
 @keyframes moving {
     from{
-        transform: translateX(50px);
+        transform: translateX(-10px);
         opacity: 0;
     }
     to{
@@ -215,39 +216,32 @@ header{
 .tab.active{
     display: flex;
 }
-.tab2, .tab3{
-    display: none;
-}
 .tab-img{
     position: relative;
 }
 .tab-shape{
-    height: 350px;
+    height: 300px;
     width: 500px;
     background: var(--Soft-Blue);
     border-radius: 0 0 40% 0;
-    position: relative;
-    top: 0;
-    right: 12rem;
-    z-index: -1;
+    margin-top: 40px;
 }
 .tab1 .tab-img img{
     width: 450px;
     position: absolute;
     bottom: 6rem;
-    left: 3rem;
+    left: 10rem;
 }
-.tab2 .tab-img img{
-    width: 350px;
-    position: absolute;
-    bottom: 5rem;
-    left: 7rem;
-}
+.tab2 .tab-img img,
 .tab3 .tab-img img{
-    width: 350px;
+    width: 400px;
     position: absolute;
-    bottom: 5rem;
-    left: 7rem;
+    bottom: 2rem;
+    left: 12rem;
+}
+.tab-content{
+    width: 40%;
+    margin-inline-end: 60px;
 }
 .tab-header{
     font-size: 2rem;
@@ -273,6 +267,7 @@ header{
 .download-contents{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
     margin: auto;
     width: 90%;
 }
@@ -416,6 +411,9 @@ header{
     font-weight: 600;
     line-height: 1.1;
 }
+.subscribe-section form{
+    max-width: 500px;
+}
 .sub{
     display: flex;
     align-items: center;
@@ -425,15 +423,12 @@ header{
     width: 100%;
     margin-bottom: 30px;
 }
-.input-control {
-
-}
 .subcribe-input{
     border: none;
     border-radius: 5px;
-    padding: 20px 30px;
+    padding: 20px;
     outline: none; 
-    min-width: 350px;
+    min-width: 300px;
 }
 .subcribe-input::placeholder{
     font-size: 1rem;
@@ -442,8 +437,8 @@ header{
 .sub i{
     font-size: 20px;
     position: absolute;
-    right: 12rem;
-    top: 50px;
+    right: 12.6rem;
+    top: 20px;
     visibility: hidden;
 }
 .sub small{
@@ -456,9 +451,10 @@ header{
     left: 50px;
     visibility: hidden;
 }
-.input-control.error input{
+.input-control.error .subcribe-input{
     border: 3px solid var(--Soft-Red);
     border-bottom: 30px solid var(--Soft-Red);
+    transition: .3s ease;
 }
 .input-control.error small{
     visibility: visible;
@@ -526,7 +522,7 @@ header{
 
 
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:756px) {
     
 header{
     padding: 3rem 5rem;
@@ -545,8 +541,8 @@ header{
 .nav-menu.active{
     transform: translateX(0%);
 }
-.brand{
-    z-index: 99;
+.mobile-brand{
+    display: block;
 }
 .nav-item{
     border-bottom: 1px solid rgb(255, 255, 255, 0.4);
@@ -554,7 +550,11 @@ header{
     text-align: center;
     padding: 0 0px 20px 0;
 }
-.nav-item:nth-child(4){
+.nav-item:nth-child(2){
+    border-top: 1px solid rgb(255, 255, 255, 0.4);
+    padding: 1.5rem;
+}
+.nav-item:nth-child(5){
     border-bottom: none;
 }
 .nav-link{
@@ -597,87 +597,44 @@ header{
 
 .hero-section{
     flex-direction: column-reverse;
-    justify-content: center;
-    padding: 0rem 0rem;
-    gap: 5rem;
-    width: 100%;
-    margin-bottom: 15rem;
+    justify-content: space-between;
+    margin-top: 4rem;
 }
 .hero-details{
-    width: 90%;
-    flex-direction: column;
-    gap: 2rem;
-    margin: auto;
+    padding: 1.5rem;
     text-align: center;
 }
-.hero-header{
-    font-size: 2.4rem;
-    line-height: 1;
-    color: var(--Very-Dark-Blue);
-}
-.hero-btn-group{
-    width: 100%;
-}
-.hero-btn-group button{
+.hero-btn-group .btn{
     width: 100%;
 }
 .hero-img{
-    width: 100%;
+    position: relative;
 }
 .hero-shape{
     height: 350px;
-    width: 550px;
-    border-radius: 0px 0px 0px 35%;
+    margin-inline-start: 29.5%;
 }
 .hero-img img{
-    width: 550px;
-    position: relative;
-    right: 0rem;
-    top: 1rem;
-}
-
-
-.feature-section{
-    margin-bottom: 13rem;
+    width: 650px;
 }
 .section-intro{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 90%;
-}
-.section-header{
-    font-size: 2rem;
-    font-weight: 500;
-}
-.feature-tab{
-    display: flex;
-    flex-direction: column;
-    padding: 0rem 0rem;
-    margin-bottom: 2rem;
+    width: 100%;
+    padding: 1.5rem;
 }
 .tab-menu{
-    padding: 2rem;
-    margin: auto;
     border-bottom: none;
-
+    width: 90%;
 }
 .feature-nav-tab{
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0rem;
-    position: relative;   
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    position: relative;     
 }
 .tab-item{
     border-bottom: 1px solid #e6e3e3;
+    text-align: center;
     padding: 1rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--Grayish-Blue);
-    cursor: pointer;
 }
 .tab-item:first-child{
     border-top: 1px solid #e6e3e3;
@@ -688,35 +645,35 @@ header{
     background: var(--Soft-Red);
     position: absolute;
     top: 3.7rem;
-    left: 7.3rem;
+    left: 4.4rem;
     transition: all 0.3s ease-in-out;
     pointer-events: none;
 }
+.tab-item.active,
+.tab-item.active:hover{
+    color: var(--Very-Dark-Blue);
+}
+.tab-item:hover{
+    color: var(--Soft-Red);
+}
 .tab{
-    margin-top: 6rem;
-    padding: 0rem 4rem;
     flex-direction: column;
-    gap: 5rem;
-}
-.tab2, .tab3{
-    display: none;
-}
-.tab-img{
-    position: relative;
-    width: 100%;
 }
 .tab-shape{
     height: 350px;
     width: 500px;
-    border-radius: 0 0 40% 0;
-    top: 0;
-    right: 12rem;
+    margin-top: 50px;
+}
+.tab1 .tab-img img{
+    width: 550px;
+    bottom: 4rem;
+    left: 3rem;
 }
 .tab-content{
     text-align: center;
-}
-.tab-btn { 
-    display: none;
+    width: 100%;
+    margin: 3rem auto;
+    margin-inline-end: 0px;
 }
 
 
@@ -752,12 +709,6 @@ header{
     width: 100%;
 }
 .sub{
-    flex-direction: column;
-    width: 100%;
-}
-.subcribe-input{
-    font-size: 1rem;
-    padding: 20px;
     width: 100%;
 }
 
@@ -793,58 +744,49 @@ header{
     header{
         padding: 3rem 2rem;
     }
-    
+
     .hero-section{
-        padding: 0rem 1rem;
-    }
-    .hero-details{
-        width: 100%;
-    }
-    .hero-header{
-        font-size: 2.4rem;
-        margin-top: 4rem;
+        margin-top: 1rem;
     }
     .hero-shape{
-        width: 450px;
-        border-radius: 0px 0px 0px 45%;
+        height: 300px;
+        width: 430px;
+        margin-inline-start: 11%;    
     }
     .hero-img img{
-        right: 2rem;
-        top: 5.8rem;
+        width: 450px;
     }
 
-    .feature-section{
-        padding: 0 1rem;
-    }
-    .section-intro{
-        width: 100%;
-    }
-    .feature-tab{
-        display: flex;
-        flex-direction: column;
-        padding: 0rem 0rem;
-        margin-bottom: 0rem;
-    }
-    .tab-menu{
-        padding: .2rem;
-        width: 100%;
-    }
-    .tab{
-        padding: 0rem 1rem;
+    .tab-shape{
+        height: 250px;
+        width: 400px;
+        margin-top: 20px;
     }
     .tab1 .tab-img img{
-        left: 2rem;
+        width: 400px;
+        bottom: 3rem;
+        left: 3rem;
     }
-    .tab-shape{
-        right: 5rem;
+    .tab2 .tab-img img,
+    .tab3 .tab-img img{
+        width: 300px;
+        position: absolute;
+        bottom: 2rem;
+        left: 9rem;
+}
+    .tab-content{
+        text-align: center;
+        width: 100%;
+        margin: 3rem auto;
+        margin-inline-end: 0px;
     }
     
     .download-section{
-        padding: 0rem 1rem;
+        padding: 1rem;
         width: 100%;
     }
     .download-card{
-        width: 100%;
+        min-width: 300px;
      }
 
     .subscribe-container{
